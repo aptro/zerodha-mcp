@@ -1,8 +1,17 @@
 # Zerodha MCP Integration
+[![smithery badge](https://smithery.ai/badge/@aptro/zerodha-mcp)](https://smithery.ai/server/@aptro/zerodha-mcp)
 
 This project integrates Zerodha's trading platform with Claude AI using the Multi-Cloud Plugin (MCP) framework, allowing you to interact with your Zerodha trading account directly through Claude.
 
 ## Setup Instructions
+
+### Installing via Smithery
+
+To install zerodha-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@aptro/zerodha-mcp):
+
+```bash
+npx -y @smithery/cli install @aptro/zerodha-mcp --client claude
+```
 
 ### 1. Create a Zerodha Developer Account
 
