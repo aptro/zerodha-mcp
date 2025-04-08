@@ -1,0 +1,31 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - kiteApiKey
+      - kiteApiSecret
+    properties:
+      kiteApiKey:
+        type: string
+        description: Zerodha Kite API Key
+      kiteApiSecret:
+        type: string
+        description: Zerodha Kite API Secret
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'python',
+      args: ['main.py'],
+      env: {
+        KITE_API_KEY: config.kiteApiKey,
+        KITE_API_SECRET: config.kiteApiSecret
+      }
+    })
+  exampleConfig:
+    kiteApiKey: your_kite_api_key_here
+    kiteApiSecret: your_kite_api_secret_here
